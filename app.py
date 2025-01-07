@@ -176,8 +176,7 @@ def main():
     st.set_page_config(page_title="AI Proposal Writer", layout="wide")
     st.title("🚀 AI-Powered Proposal Writer")
     st.markdown("---")
-
-    proposal_writer = ProposalWriter()
+    
     api_key = st.text_input("OpenAI API Key", type="password")
 
     # Main RFP document upload
@@ -194,6 +193,7 @@ def main():
 
     if api_key:
         os.environ["OPENAI_API_KEY"] = api_key
+        proposal_writer = ProposalWriter()
         
         if main_file and past_performance_files and st.button("Generate Proposal"):
             process_output_expander = st.expander("Processing Output:")
