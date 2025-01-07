@@ -3,4 +3,4 @@ python-docx
 crewai
 langchain_openai
 langchain
-faiss-cpu
+langchain_community
