@@ -1,3 +1,6 @@
 streamlit
 python-docx
 crewai
+langchain_openai
+langchain
+faiss-cpu
