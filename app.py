@@ -37,12 +37,13 @@ class StreamToExpander:
 class ProposalWriter:
     def __init__(self):
         self.search_tool = SerperDevTool()
-        
+        self.llm = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
     def setup_agents(self):
         researcher = Agent(
             role='Research Analyst',
             goal='Analyze input documents and past project accomplishments to identify relevant experience.',
             backstory='Expert at analyzing documents and matching past performance to new requirements.',
+            llm=self.llm,
             tools=[self.search_tool],
             allow_delegation=True,
             verbose=True
@@ -54,6 +55,7 @@ class ProposalWriter:
             backstory='Experienced in creating persuasive content that demonstrates capability through past accomplishments.',
             tools=[self.search_tool],
             allow_delegation=True,
+            llm=self.llm,
             verbose=True
         )
 
@@ -63,6 +65,7 @@ class ProposalWriter:
             backstory='Senior editor ensuring professional standards and effective past performance narratives.',
             tools=[self.search_tool],
             allow_delegation=True,
+            llm=self.llm,
             verbose=True
         )
 

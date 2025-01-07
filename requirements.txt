@@ -1,6 +1,7 @@
 streamlit
 python-docx
-crewai
 langchain_openai
 langchain
 langchain_community
+crewai==0.86.0
+crewai-tools==0.17.0
